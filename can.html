@@ -1,7 +1,25 @@
 <pre>
     CAN(Controller Area Network)
     - 호스트 컴퓨터 없이 마이크로 컨트롤러나 장치들이 서로 통신하기 위해 설계된 표준 통신 규격
+    - 메시지 기반 프로토콜
+    - 송신자가 둘 이상이면 충돌 가능
+    - Dominant bit(0)과 Recessive bit(1)
+    - 데이터 프레임
+      SOF(Start Of Frame, 1bit)
+      CAN ID(11bits)
+      RTR(Remote Transmission Request, 1bit)
+      Reserved(2bits)
+      DLC(Data Length Code, 4bits)
+      Data(0-64bits)
+      CRC-15(Cylic Redundancy Check, 16bits)
+      ACK(Acknowledgement, 2bits)
+      EOF(End Of Frame, 7bits)
+    - CAN ID은 다음 기능
+      데이터 프로레임 우선순위 결정(내림차순, Dominant bit 우선)
+      데이터 필드 정보 메타적 기술
 
+    - python code
+      https://python-can.readthedocs.io/en/stable/
 
 </pre>
 
